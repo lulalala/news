@@ -294,6 +294,7 @@ DEPENDENCIES
   multi_json (~> 1.7.2)
   mysql2
   nifty-generators (~> 0.4.6)
+  nokogiri
   oj (~> 2.0.10)
   rails (= 3.2.13)
   rb-fsevent (~> 0.9.3)

@@ -57,6 +57,9 @@ gem "bootstrap_helper"
 
 gem 'unobtrusive_flash', git: 'git://github.com/lulalala/unobtrusive_flash.git'
 
+# Fetch
+gem 'nokogiri'
+
 # Pagination
 gem 'kaminari'
 
