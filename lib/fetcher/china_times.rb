@@ -6,7 +6,12 @@ class Fetcher::ChinaTimes < Fetcher
   #url = 'http://news.chinatimes.com/mainland/11050505/112013041400325.html'
   def fetch
     @article.title = @doc.at_css('.highlight').text
+
     @article.company_name = @doc.css('.bar-align-left>ul.inline-list>li')[1].text
+    if @article.company_name == '新聞速報'
+      @article.company_name = nil
+    end
+
     @article.content = @doc.css('#ctkeywordcontent').text
 
     #@article.web_published_at = Time.parse(@doc.at_css('#story_update').text)
