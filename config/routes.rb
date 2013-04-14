@@ -1,4 +1,6 @@
 NewsSucks::Application.routes.draw do
+  resources :articles, only:[:index, :show, :create, :update]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

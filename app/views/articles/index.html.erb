@@ -1,0 +1,28 @@
+<% title "Articles" %>
+<%= form_tag articles_path do %>
+  <%= url_field_tag :url %>
+  <%= submit_tag '噓新聞' %>
+<% end %>
+
+<table class="table">
+  <tr>
+    <th>標題</th>
+    <th>記者</th>
+    <th>內文</th>
+    <th>刊登時間</th>
+    <th>Url</th>
+    <th>媒體</th>
+  </tr>
+  <% for article in @articles %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.reporter_name %></td>
+      <td><%= truncate(article.content, length:20) %></td>
+      <td><%= l article.published_at, :format => :short %></td>
+      <td><%= article.url %></td>
+      <td><%= article.company_name %></td>
+      <td><%= link_to "Show", article %></td>
+    </tr>
+  <% end %>
+</table>
+

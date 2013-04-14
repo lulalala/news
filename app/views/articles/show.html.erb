@@ -1,0 +1,30 @@
+<% title "Article" %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+<p>
+  <strong>Reporter Name:</strong>
+  <%= @article.reporter_name %>
+</p>
+<p>
+  <strong>Content:</strong>
+  <%= @article.content %>
+</p>
+<p>
+  <strong>Published At:</strong>
+  <%= @article.published_at %>
+</p>
+<p>
+  <strong>Url:</strong>
+  <%= @article.url %>
+</p>
+<p>
+  <strong>Company Name:</strong>
+  <%= @article.company_name %>
+</p>
+
+<p>
+  <%= link_to "View All", articles_path %>
+</p>
