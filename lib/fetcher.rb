@@ -2,7 +2,7 @@ class Fetcher
   attr_reader :doc
 
   def self.subclasses
-    [ Fetcher::Udn, Fetcher::LibertyTimes ]
+    [ Fetcher::Udn, Fetcher::LibertyTimes, Fetcher::ChinaTimes ]
   end
 
   def self.applicable_fetcher(url)
