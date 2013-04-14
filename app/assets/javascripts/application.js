@@ -12,4 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require unobtrusive_flash
 //= require_tree .

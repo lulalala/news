@@ -55,6 +55,8 @@ gem 'simple_form', '~> 2.1.0'
 gem "anjlab-bootstrap-rails", :require => "bootstrap-rails"
 gem "bootstrap_helper"
 
+gem 'unobtrusive_flash', git: 'git://github.com/lulalala/unobtrusive_flash.git'
+
 # Pagination
 gem 'kaminari'
 
