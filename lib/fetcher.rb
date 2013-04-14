@@ -13,4 +13,18 @@ class Fetcher
       fetcher_class.new(url)
     end
   end
+
+  def initialize(url)
+    @article = Article.new
+    @article.url = url
+    @raw = open(url).read.encode('utf-8', 'big5', :invalid => :replace, :undef => :replace, :replace => '')
+    @doc = Nokogiri::HTML(@raw)
+  end
+
+  def clean_up
+    @article.content.try :strip!
+    @article.title.try :strip!
+    @article.reporter_name.try :strip!
+    @article.company_name.try :strip!
+  end
 end

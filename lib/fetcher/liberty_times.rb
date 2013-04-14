@@ -1,11 +1,4 @@
 class Fetcher::LibertyTimes < Fetcher
-  def initialize(url)
-    @article = Article.new
-    @article.url = url
-    @raw = open(url).read.encode('utf-8', 'big5', :invalid => :replace, :undef => :replace, :replace => '')
-    @doc = Nokogiri::HTML(@raw)
-  end
-
   def self.applicable?(url)
     url.include?('libertytimes.com.tw')
   end
@@ -20,6 +13,8 @@ class Fetcher::LibertyTimes < Fetcher
 
     @article.reporter_name = parse_reporter_name()
     @article.published_at = Time.parse(@doc.at_css('#date').text)
+
+    clean_up
 
     @article
   end
