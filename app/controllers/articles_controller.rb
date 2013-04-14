@@ -6,13 +6,16 @@ class ArticlesController < ApplicationController
   def create
     url = params[:url]
     begin
-      article = Fetcher::Udn.new(url).fetch
+      article = Fetcher.applicable_fetcher(url).fetch
       if article.save
         redirect_to action: :index
       else
         redirect_to article
       end
     rescue
+      if Rails.env.development?
+        raise # debugging
+      end
       flash[:error] = '抱歉，這篇新聞還無法自動抓取，已經通知站長，將會找時間改進。'
       redirect_to action: :index and return
     end
