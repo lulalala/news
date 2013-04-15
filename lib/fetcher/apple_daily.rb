@@ -34,4 +34,8 @@ class Fetcher::AppleDaily < Fetcher
     end
     reporter_name
   end
+
+  def clean_url
+    @article.url.gsub!(%r{/([^/]*)$},'')
+  end
 end

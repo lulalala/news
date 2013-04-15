@@ -29,4 +29,9 @@ class Fetcher::LibertyTimes < Fetcher
     end
     reporter_name
   end
+
+  def clean_url
+    cleaner = UrlCleaner.new('no')
+    @article.url = cleaner(@article.url)
+  end
 end

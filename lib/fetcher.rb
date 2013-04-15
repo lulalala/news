@@ -26,5 +26,6 @@ class Fetcher
     @article.title.try :strip!
     @article.reporter_name.try :strip!
     @article.company_name.try :strip!
+    clean_url if respond_to?(:clean_url)
   end
 end

@@ -33,4 +33,9 @@ class Fetcher::ChinaTimes < Fetcher
     end
     reporter_name
   end
+
+  def clean_url
+    cleaner = UrlCleaner.new('id')
+    @article.url = cleaner(@article.url)
+  end
 end
