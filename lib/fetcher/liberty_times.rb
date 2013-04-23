@@ -32,6 +32,6 @@ class Fetcher::LibertyTimes < Fetcher
 
   def clean_url
     cleaner = UrlCleaner.new('no')
-    @article.url = cleaner(@article.url)
+    @article.url = cleaner.clean(@article.url)
   end
 end

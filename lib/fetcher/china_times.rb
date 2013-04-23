@@ -36,6 +36,6 @@ class Fetcher::ChinaTimes < Fetcher
 
   def clean_url
     cleaner = UrlCleaner.new('id')
-    @article.url = cleaner(@article.url)
+    @article.url = cleaner.clean(@article.url)
   end
 end

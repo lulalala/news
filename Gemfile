@@ -59,6 +59,7 @@ gem 'unobtrusive_flash', git: 'git://github.com/lulalala/unobtrusive_flash.git'
 
 # Fetch
 gem 'nokogiri'
+gem "addressable", "~> 2.3.4"
 
 # Pagination
 gem 'kaminari'

@@ -1,3 +1,4 @@
+require "addressable/uri"
 class UrlCleaner
   # white_list: Array of string, denoting url query 
   # parameters that cleaner should keep
