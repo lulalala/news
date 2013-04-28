@@ -6,11 +6,16 @@ class ArticlesController < ApplicationController
   def create
     url = params[:url]
     begin
-      article = Fetcher.applicable_fetcher(url).fetch
-      if article.save
+      @article = Fetcher.applicable_fetcher(url).fetch
+      if @article.save
         redirect_to action: :index
       else
-        redirect_to article
+        puts @article.errors[:base].inspect
+        puts @article.valid?
+        if @article.errors[:base].find{|e| e.include?('新聞轉載')}
+          render :reproduced and return
+        end
+        redirect_to @article
       end
     rescue
       if Rails.env.development?

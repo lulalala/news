@@ -38,4 +38,8 @@ class Fetcher::ChinaTimes < Fetcher
     cleaner = UrlCleaner.new('id')
     @article.url = cleaner.clean(@article.url)
   end
+
+  def reproduced?
+    @doc.css('div.articlebox ul.inline-list li.ui').text.include?('中央社')
+  end
 end

@@ -19,4 +19,8 @@ class Fetcher::Udn < Fetcher
 
     @article
   end
+
+  def reproduced?
+    @doc.css('td.story_author div#story_author').text.include?('中央社')
+  end
 end

@@ -47,4 +47,8 @@ class Fetcher::Cna < Fetcher
     end
     reporter_name
   end
+
+  def reproduced?
+    false
+  end
 end

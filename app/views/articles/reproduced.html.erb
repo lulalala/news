@@ -1,0 +1,4 @@
+抱歉，這篇文章的出處是中央社，為了避免同一篇新聞多次評論的情況，請使用中央社的網址唷。
+
+<%= search_term = "\"#{@article.title}\""
+  link_to "Google 搜尋中央社新聞 #{@article.title}", "https://www.google.com.tw/#safe=off&q=#{CGI::escape(search_term)}+site:cna.com.tw" %>
