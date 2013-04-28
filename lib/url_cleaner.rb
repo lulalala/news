@@ -10,7 +10,9 @@ class UrlCleaner
   def clean(url)
     @url = Addressable::URI.parse(url)
     params = @url.query_values
-    params.keep_if{|k,v| @white_list.include?(k) }
+    if params
+      params.keep_if{|k,v| @white_list.include?(k) }
+    end
     @url.query_values = params
     @url.to_s
   end
