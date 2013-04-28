@@ -1,6 +1,4 @@
 class Fetcher
-  class ReproducedError < StandardError; end
-
   attr_reader :doc
 
   def self.subclasses

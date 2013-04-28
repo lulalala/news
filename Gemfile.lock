@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/lulalala/unobtrusive_flash.git
-  revision: 71a031ffa8271eb9d8d0f1b815a2beba738119f7
+  revision: 0f91d05db49363832c3e42e208edc16d025b544a
   specs:
     unobtrusive_flash (0.0.2)
 
