@@ -19,6 +19,8 @@ class Fetcher::ChinaTimes < Fetcher
     @article.reporter_name = parse_reporter_name()
     @article.published_at = Time.parse(@doc.css('.bar-align-left>ul.inline-list>li')[0].text)
 
+    @article.url_id = parse_url_id()
+
     clean_up
 
     @article
@@ -41,5 +43,9 @@ class Fetcher::ChinaTimes < Fetcher
 
   def reproduced?
     @doc.css('div.articlebox ul.inline-list li.ui').text.include?('中央社')
+  end
+
+  def parse_url_id
+    @article.url[%r{http://news.chinatimes.com/focus/(\d+/\d+)},1]
   end
 end

@@ -22,6 +22,8 @@ class Fetcher::AppleDaily < Fetcher
 
     @article.published_at = Time.parse(@doc.css('.gggs time @datetime').text)
 
+    @article.url_id = parse_url_id()
+
     clean_up
 
     @article
@@ -37,5 +39,9 @@ class Fetcher::AppleDaily < Fetcher
 
   def clean_url
     @article.url.gsub!(%r{/([^/]*)$},'')
+  end
+
+  def parse_url_id
+    @article.url[%r{http://www.appledaily\.com\.tw/appledaily/article/headline/(\d+/\d+)%},1]
   end
 end

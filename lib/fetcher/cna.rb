@@ -29,6 +29,8 @@ class Fetcher::Cna < Fetcher
     Rails.logger.debug date_string
     @article.published_at = Time.parse(date_string)
 
+    @article.url_id = parse_url_id()
+
     clean_up
 
     @article
@@ -50,5 +52,9 @@ class Fetcher::Cna < Fetcher
 
   def reproduced?
     false
+  end
+
+  def parse_url_id
+    @article.url[%r{http://www.cna.com.tw/News/(\w+/\d+-\d+)},1]
   end
 end

@@ -25,6 +25,7 @@ class Fetcher::LibertyTimes < Fetcher
 
       @article.reporter_name = parse_reporter_name()
       @article.published_at = Time.parse(@doc.at_css('#date').text)
+      @article.url_id = @article.url[%r{http://www\.libertytimes\.com\.tw/(.*\.htm)},1]
     elsif @encoding == :utf8
       # new layout uses utf-8
       @article.title = @doc.at_css('#newsti').text
@@ -40,6 +41,8 @@ class Fetcher::LibertyTimes < Fetcher
       end
 
       @article.reporter_name = parse_reporter_name()
+
+      @article.url_id = @article.url[%r{news\.php?no=(\d+)},1]
     end
 
     clean_up
