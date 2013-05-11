@@ -6,7 +6,7 @@ class Fetcher
   end
 
   def self.subclasses
-    [ Fetcher::Udn, Fetcher::LibertyTimes, Fetcher::ChinaTimes, Fetcher::Cna, Fetcher::AppleDaily ]
+    [ Fetcher::Udn, Fetcher::LibertyTimes, Fetcher::LibertyTimesBig5, Fetcher::ChinaTimes, Fetcher::Cna, Fetcher::AppleDaily ]
   end
 
   def self.applicable_fetcher(url)
