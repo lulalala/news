@@ -7,6 +7,7 @@ class Fetcher::Cna < Fetcher
     @article = Article.new
     @article.url = url
     @article.url_id = parse_url_id()
+    @article.web_domain = self.class.domain()
     @raw = open(url).read
     @doc = Nokogiri::HTML(@raw)
   end

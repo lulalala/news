@@ -6,6 +6,7 @@ class Fetcher::LibertyTimes < Fetcher
   def initialize(url)
     @article = Article.new
     @article.url = url
+    @article.web_domain = self.class.domain()
     @raw = open(url).read
     @doc = Nokogiri::HTML(@raw)
     @encoding = :utf8
