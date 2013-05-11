@@ -6,6 +6,7 @@ class Fetcher::Cna < Fetcher
   def initialize(url)
     @article = Article.new
     @article.url = url
+    @article.url_id = parse_url_id()
     @raw = open(url).read
     @doc = Nokogiri::HTML(@raw)
   end
@@ -28,8 +29,6 @@ class Fetcher::Cna < Fetcher
     date_string = date.join('/') + ' ' + @doc.css('.date').text
     Rails.logger.debug date_string
     @article.published_at = Time.parse(date_string)
-
-    @article.url_id = parse_url_id()
 
     clean_up
 

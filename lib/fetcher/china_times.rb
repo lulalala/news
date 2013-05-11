@@ -19,8 +19,6 @@ class Fetcher::ChinaTimes < Fetcher
     @article.reporter_name = parse_reporter_name()
     @article.published_at = Time.parse(@doc.css('.bar-align-left>ul.inline-list>li')[0].text)
 
-    @article.url_id = parse_url_id()
-
     clean_up
 
     @article

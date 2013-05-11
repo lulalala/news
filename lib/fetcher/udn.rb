@@ -15,8 +15,6 @@ class Fetcher::Udn < Fetcher
     @article.reporter_name = origin[2][%r{記者(.+)},1]
     @article.published_at = Time.parse(@doc.at_css('#story_update').text)
 
-    @article.url_id = parse_url_id()
-
     clean_up
 
     @article

@@ -6,6 +6,7 @@ class Fetcher::AppleDaily < Fetcher
   def initialize(url)
     @article = Article.new
     @article.url = url
+    @article.url_id = parse_url_id()
     @raw = open(url).read
     @doc = Nokogiri::HTML(@raw)
   end
@@ -21,8 +22,6 @@ class Fetcher::AppleDaily < Fetcher
     @article.reporter_name = parse_reporter_name()
 
     @article.published_at = Time.parse(@doc.css('.gggs time @datetime').text)
-
-    @article.url_id = parse_url_id()
 
     clean_up
 
