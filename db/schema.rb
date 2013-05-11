@@ -22,10 +22,10 @@ ActiveRecord::Schema.define(:version => 20130504124857) do
     t.string   "company_name"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-    t.string   "type"
+    t.string   "web_domain"
     t.string   "url_id"
   end
 
-  add_index "articles", ["type", "url_id"], :name => "index_articles_on_type_and_url_id", :unique => true
+  add_index "articles", ["web_domain", "url_id"], :name => "index_articles_on_web_domain_and_url_id", :unique => true
 
 end
