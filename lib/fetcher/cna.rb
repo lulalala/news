@@ -1,6 +1,6 @@
 class Fetcher::Cna < Fetcher
-  def self.applicable?(url)
-    url.include?('cna.com.tw')
+  def self.domain
+    'cna.com.tw'
   end
 
   def initialize(url)

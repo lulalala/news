@@ -1,6 +1,6 @@
 class Fetcher::ChinaTimes < Fetcher
-  def self.applicable?(url)
-    url.include?('chinatimes.com')
+  def self.domain
+    'chinatimes.com'
   end
 
   #url = 'http://news.chinatimes.com/mainland/11050505/112013041400325.html'

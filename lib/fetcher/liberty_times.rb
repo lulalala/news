@@ -1,6 +1,6 @@
 class Fetcher::LibertyTimes < Fetcher
-  def self.applicable?(url)
-    url.include?('libertytimes.com.tw')
+  def self.domain
+    'libertytimes.com.tw'
   end
 
   def initialize(url)

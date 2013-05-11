@@ -1,6 +1,6 @@
 class Fetcher::Udn < Fetcher
-  def self.applicable?(url)
-    url.include?('udn.com')
+  def self.domain
+    'udn.com'
   end
 
   #url = 'http://udn.com/NEWS/NATIONAL/NATS5/7807573.shtml'

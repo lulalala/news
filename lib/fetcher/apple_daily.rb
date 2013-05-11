@@ -1,6 +1,6 @@
 class Fetcher::AppleDaily < Fetcher
-  def self.applicable?(url)
-    url.include?('appledaily.com.tw')
+  def self.domain
+    'appledaily.com.tw'
   end
 
   def initialize(url)

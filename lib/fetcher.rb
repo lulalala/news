@@ -1,6 +1,10 @@
 class Fetcher
   attr_reader :doc
 
+  def self.applicable?(url)
+    url.include?(domain())
+  end
+
   def self.subclasses
     [ Fetcher::Udn, Fetcher::LibertyTimes, Fetcher::ChinaTimes, Fetcher::Cna, Fetcher::AppleDaily ]
   end
