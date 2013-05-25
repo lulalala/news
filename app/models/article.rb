@@ -15,6 +15,13 @@ class Article < ActiveRecord::Base
   def self.find_existing(domain, url_id)
     Article.where(web_domain:domain,url_id:url_id).first
   end
+
+  before_create :build_lines
+  def build_lines
+    content.scan(/[^。\n]*[。\n]/).count.times do |index|
+      lines.build(line_number:index+1)
+    end
+  end
 end
 
 # == Schema Information
