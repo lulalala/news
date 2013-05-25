@@ -44,6 +44,6 @@ class Fetcher::ChinaTimes < Fetcher
   end
 
   def self.parse_url_id(url)
-    url[%r{http://news.chinatimes.com/focus/(\d+/\d+)},1]
+    url[%r{http://news.chinatimes.com/\w+/(\d+/\d+)},1]
   end
 end
