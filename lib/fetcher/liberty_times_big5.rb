@@ -37,7 +37,7 @@ class Fetcher::LibertyTimesBig5 < Fetcher
     @article.url = cleaner.clean(@article.url)
   end
 
-  def parse_url_id
-    @article.url_id = @article.url[%r{http://www\.libertytimes\.com\.tw/(.*\.htm)},1]
+  def self.parse_url_id(url)
+    url[%r{http://www\.libertytimes\.com\.tw/(.*\.htm)},1]
   end
 end

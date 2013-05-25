@@ -43,7 +43,7 @@ class Fetcher::ChinaTimes < Fetcher
     @doc.css('div.articlebox ul.inline-list li.ui').text.include?('中央社')
   end
 
-  def parse_url_id
-    @article.url[%r{http://news.chinatimes.com/focus/(\d+/\d+)},1]
+  def self.parse_url_id(url)
+    url[%r{http://news.chinatimes.com/focus/(\d+/\d+)},1]
   end
 end

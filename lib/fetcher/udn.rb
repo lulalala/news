@@ -24,7 +24,7 @@ class Fetcher::Udn < Fetcher
     @doc.css('td.story_author div#story_author').text.include?('中央社')
   end
 
-  def parse_url_id
-    @article.url[%r{(\w+/\w+/\d+)},1]
+  def self.parse_url_id(url)
+    url[%r{(\w+/\w+/\d+)},1]
   end
 end

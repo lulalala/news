@@ -21,7 +21,7 @@ class Fetcher
   def initialize(url)
     @article = Article.new
     @article.url = url
-    @article.url_id = parse_url_id()
+    @article.url_id = self.class.parse_url_id(url)
     @article.web_domain = self.class.domain()
     @raw = open(url).read.encode('utf-8', 'big5', :invalid => :replace, :undef => :replace, :replace => '')
     @doc = Nokogiri::HTML(@raw)

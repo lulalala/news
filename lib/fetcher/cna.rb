@@ -6,7 +6,7 @@ class Fetcher::Cna < Fetcher
   def initialize(url)
     @article = Article.new
     @article.url = url
-    @article.url_id = parse_url_id()
+    @article.url_id = self.class.parse_url_id(url)
     @article.web_domain = self.class.domain()
     @raw = open(url).read
     @doc = Nokogiri::HTML(@raw)
@@ -54,7 +54,7 @@ class Fetcher::Cna < Fetcher
     false
   end
 
-  def parse_url_id
-    @article.url[%r{http://www.cna.com.tw/News/(\w+/\d+-\d+)},1]
+  def self.parse_url_id(url)
+    url[%r{http://www.cna.com.tw/News/(\w+/\d+-\d+)},1]
   end
 end
