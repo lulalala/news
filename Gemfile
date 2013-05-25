@@ -64,6 +64,9 @@ gem "addressable", "~> 2.3.4"
 # Pagination
 gem 'kaminari'
 
+# Authentication
+gem 'devise'
+
 group :development do
   gem "nifty-generators", "~> 0.4.6"
   gem "better_errors"
