@@ -5,10 +5,17 @@ class ArticlesController < ApplicationController
 
   def create
     url = params[:url]
+    fetcher = Fetcher.applicable_fetcher(url)
+
+    # Use article if already fetched before
+    if @article = fetcher.find_existing(url)
+      redirect_to review_article_path(@article) and return
+    end
+
     begin
-      @article = Fetcher.applicable_fetcher(url).fetch
+      @article = fetcher.fetch
       if @article.save
-        redirect_to action: :index
+        redirect_to review_article_path(@article)
       else
         puts @article.errors[:base].inspect
         puts @article.valid?

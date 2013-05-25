@@ -8,6 +8,10 @@ class Article < ActiveRecord::Base
       errors.add(:base, "新聞轉載")
     end
   end
+
+  def self.find_existing(domain, url_id)
+    Article.where(web_domain:domain,url_id:url_id).first
+  end
 end
 
 # == Schema Information

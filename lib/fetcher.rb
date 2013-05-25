@@ -39,4 +39,8 @@ class Fetcher
   def reproduced?
     false
   end
+
+  def find_existing(url)
+    Article.find_existing(self.class.domain(),self.class.parse_url_id(url))
+  end
 end
