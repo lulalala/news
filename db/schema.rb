@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130525134232) do
+ActiveRecord::Schema.define(:version => 20130525135444) do
 
   create_table "article_lines", :force => true do |t|
     t.integer  "article_id"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(:version => 20130525134232) do
   end
 
   add_index "article_lines", ["article_id", "line_number"], :name => "index_article_lines_on_article_id_and_line_number"
+
+  create_table "article_reviews", :force => true do |t|
+    t.integer  "reviewable_id"
+    t.string   "reviewable_type", :limit => 64
+    t.text     "text"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  add_index "article_reviews", ["reviewable_id", "reviewable_type"], :name => "index_article_reviews_on_reviewable_id_and_reviewable_type"
 
   create_table "articles", :force => true do |t|
     t.string   "title",         :null => false

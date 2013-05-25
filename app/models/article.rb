@@ -3,6 +3,7 @@ class Article < ActiveRecord::Base
   attr_accessor :reproduced
 
   has_many :'lines', class_name:'Article::Line'
+  has_many :reviews, class_name:'Article::Review', :as => :reviewable
 
   validate :reproduced?
   def reproduced?
