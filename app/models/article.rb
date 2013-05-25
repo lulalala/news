@@ -2,6 +2,8 @@ class Article < ActiveRecord::Base
   attr_accessible :title, :reporter_name, :content, :published_at, :url, :company_name
   attr_accessor :reproduced
 
+  has_many :'lines', class_name:'Article::Line'
+
   validate :reproduced?
   def reproduced?
     if reproduced

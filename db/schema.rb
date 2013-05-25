@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130504124857) do
+ActiveRecord::Schema.define(:version => 20130525130311) do
+
+  create_table "article_lines", :force => true do |t|
+    t.integer  "article_id"
+    t.integer  "line_number"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "article_lines", ["article_id", "line_number"], :name => "index_article_lines_on_article_id_and_line_number"
 
   create_table "articles", :force => true do |t|
     t.string   "title",         :null => false
