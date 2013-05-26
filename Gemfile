@@ -100,3 +100,5 @@ group :development, :test do
   gem 'sqlite3'
   gem "rspec-rails", "~> 2.13.0"
 end
+
+gem "letter_opener", :group => :development

@@ -141,6 +141,10 @@ GEM
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    launchy (2.3.0)
+      addressable (~> 2.3)
+    letter_opener (1.1.1)
+      launchy (~> 2.2)
     listen (0.7.3)
     lograge (0.2.0)
       actionpack
@@ -302,6 +306,7 @@ DEPENDENCIES
   guard-spork (~> 1.5.0)
   jquery-rails
   kaminari
+  letter_opener
   lograge (~> 0.2.0)
   meta-tags (~> 1.4.1)
   mocha (~> 0.13.3)
