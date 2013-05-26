@@ -18,7 +18,14 @@ class Article < ActiveRecord::Base
 
   def content_lines
     if @content_lines.nil?
-      @content_lines = content.scan(/[^。\n]*[。\n]/)
+      regular_exp = /(?:    # Either match...
+                      「.*」  # a quoted sentence
+                    |         # or
+                      [^「」『』。？！]*   # anything except quotes or dots.
+                    )+        # Repeat as needed
+                    [。？！]\s*     # Then match a dot and optionally some whitespace.
+                    /x
+      @content_lines = content.scan(regular_exp)
       @content_lines.each do |cl| cl.gsub!(/[[:space:]]/, ' ') end
       @content_lines.each(&:strip!)
     end
