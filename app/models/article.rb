@@ -34,8 +34,8 @@ class Article < ActiveRecord::Base
 
   before_create :build_lines
   def build_lines
-    content_lines.count.times do |index|
-      lines.build(line_number:index+1)
+    content_lines.each_with_index do |line, index|
+      lines.build(text:line, line_number:index+1)
     end
   end
 end
