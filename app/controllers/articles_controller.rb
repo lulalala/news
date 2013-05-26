@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @articles = Article.order('id DESC').page(params[:page])
+    @articles = @articles.order('id DESC').page(params[:page])
   end
 
   def create
@@ -36,16 +36,13 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
   end
 
   # GET
   def review
-    @article = Article.find(params[:id])
   end
 
   def update
-    @article = Article.find(params[:id])
     if @article.update_attributes(params[:article])
       redirect_to @article, :notice  => "Successfully updated article."
     else
