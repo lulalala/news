@@ -52,6 +52,7 @@ GEM
     bourne (1.4.0)
       mocha (~> 0.13.2)
     builder (3.0.4)
+    cancan (1.6.9)
     capistrano (2.14.2)
       highline
       net-scp (>= 1.0.0)
@@ -283,6 +284,7 @@ DEPENDENCIES
   annotate (~> 2.5.0)
   better_errors
   bootstrap_helper
+  cancan
   capistrano
   capistrano-nginx (~> 0.1.0)
   capybara (~> 1.1.2)

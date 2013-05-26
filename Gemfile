@@ -66,6 +66,7 @@ gem 'kaminari'
 
 # Authentication
 gem 'devise'
+gem 'cancan'
 
 group :development do
   gem "nifty-generators", "~> 0.4.6"
