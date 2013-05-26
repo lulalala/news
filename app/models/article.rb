@@ -17,7 +17,12 @@ class Article < ActiveRecord::Base
   end
 
   def content_lines
-    @content_lines ||= content.scan(/[^。\n]*[。\n]/)
+    if @content_lines.nil?
+      @content_lines = content.scan(/[^。\n]*[。\n]/)
+      @content_lines.each do |cl| cl.gsub!(/[[:space:]]/, ' ') end
+      @content_lines.each(&:strip!)
+    end
+    @content_lines
   end
 
   before_create :build_lines
