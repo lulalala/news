@@ -16,9 +16,13 @@ class Article < ActiveRecord::Base
     Article.where(web_domain:domain,url_id:url_id).first
   end
 
+  def content_lines
+    @content_lines ||= content.scan(/[^。\n]*[。\n]/)
+  end
+
   before_create :build_lines
   def build_lines
-    content.scan(/[^。\n]*[。\n]/).count.times do |index|
+    content_lines.count.times do |index|
       lines.build(line_number:index+1)
     end
   end
