@@ -102,3 +102,5 @@ group :development, :test do
 end
 
 gem "letter_opener", :group => :development
+
+gem 'acts-as-taggable-on'
