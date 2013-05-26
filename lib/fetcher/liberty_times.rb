@@ -10,6 +10,7 @@ class Fetcher::LibertyTimes < Fetcher
   def initialize(url)
     @article = Article.new
     @article.url = url
+    @article.url_id = self.class.parse_url_id(url)
     @article.web_domain = self.class.domain()
     @raw = open(url).read
     @doc = Nokogiri::HTML(@raw)
@@ -53,5 +54,9 @@ class Fetcher::LibertyTimes < Fetcher
   def clean_url
     cleaner = UrlCleaner.new('no')
     @article.url = cleaner.clean(@article.url)
+  end
+
+  def self.parse_url_id(url)
+    url[%r{http://www.libertytimes.com.tw/(.*)\.htm},1]
   end
 end
