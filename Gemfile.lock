@@ -164,6 +164,8 @@ GEM
     mocha (0.13.3)
       metaclass (~> 0.0.1)
     multi_json (1.7.2)
+    multi_logger (0.0.1)
+      railties
     mysql2 (0.3.11)
     net-scp (1.1.0)
       net-ssh (>= 2.6.5)
@@ -314,6 +316,7 @@ DEPENDENCIES
   meta-tags (~> 1.4.1)
   mocha (~> 0.13.3)
   multi_json (~> 1.7.2)
+  multi_logger
   mysql2
   nifty-generators (~> 0.4.6)
   nokogiri

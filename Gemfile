@@ -37,6 +37,7 @@ gem 'dalli', "~> 2.6.2"
 
 # System
 gem "lograge", "~> 0.2.0"
+gem 'multi_logger'
 
 gem "oj", "~> 2.0.10"
 gem "multi_json", "~> 1.7.2"
