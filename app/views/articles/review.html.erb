@@ -1,0 +1,17 @@
+<table class="table">
+<% @article.lines.each do |l| %>
+  <tr>
+    <td>
+      <%= l.text %>
+    </td>
+    <td>
+      review
+    </td>
+    <% l.reviews.each do |r| %>
+      <td>
+        <%= r.text %>
+      </td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
