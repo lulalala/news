@@ -7,6 +7,11 @@ NewsSucks::Application.routes.draw do
     member do
       get :review
     end
+    scope module: 'article' do
+      resources :lines do
+        resources :reviews
+      end
+    end
   end
 
   # The priority is based upon order of creation:

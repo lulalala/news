@@ -30,6 +30,7 @@ class Ability
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
     if user
       can :manage, Article
+      can :manage, Article::Review
     else # not logged in
       can :read, :all
     end
