@@ -35,7 +35,22 @@ body, html{
   </p>
   <p>
     <strong>Content:</strong>
-    <%= @article.content %>
+    <% @article.lines.each do |l| %>
+      <% if l.reviews.size > 0 %>
+        <table>
+          <tr>
+            <td>
+              <%= l.text %>
+            </td>
+          <% l.reviews.each do |r| %>
+            <td>
+            <%= r.text %>
+            </td>
+          <% end %>
+        </tr>
+      </table>
+      <% end %>
+    <% end %>
   </p>
   <p>
     <strong>Published At:</strong>
