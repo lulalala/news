@@ -3,7 +3,8 @@ class Article::ReviewsController < ApplicationController
 
   def new
     if params[:line_id]
-      @line = Article::Line.find(params[:line_id])
+      line = Article::Line.find(params[:line_id])
+      @review.reviewable = line
     end
   end
 
@@ -11,10 +12,8 @@ class Article::ReviewsController < ApplicationController
   end
 
   def create
-    line = Article::Line.find(params[:line_id])
-    @review.reviewable = line
     if @review.save
-      redirect_to review_article_path(params[:article_id])
+      redirect_to articles_path
     else
       render :new
     end

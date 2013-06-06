@@ -5,7 +5,7 @@
       <%= l.text %>
     </td>
     <td>
-      <%= link_to '改正', new_article_line_review_path(@article, l), class:'btn' %>
+      <%= link_to '改正', new_review_path(line_id:l.id), class:'btn' %>
     </td>
     <% l.reviews.each do |r| %>
       <td>

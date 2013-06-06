@@ -1,4 +1,6 @@
-<%= simple_form_for [ @line.article, @line, @review ] do |f| %>
+<%= simple_form_for @review do |f| %>
   <%= f.input :text %>
+  <%= f.hidden_field :reviewable_id %>
+  <%= f.hidden_field :reviewable_type %>
   <%= f.submit %>
 <% end %>
