@@ -255,6 +255,7 @@ GEM
     seed-fu (2.2.0)
       activerecord (~> 3.1)
       activesupport (~> 3.1)
+    seedbank (0.2.1)
     selenium-webdriver (2.32.1)
       childprocess (>= 0.2.5)
       multi_json (~> 1.0)
@@ -342,6 +343,7 @@ DEPENDENCIES
   rspec-rails (~> 2.13.2)
   sass-rails (~> 3.2.6)
   seed-fu
+  seedbank
   shoulda-matchers (~> 1.5.4)
   simple_form (~> 2.1.0)
   spork-rails!

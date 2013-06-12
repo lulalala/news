@@ -43,6 +43,7 @@ gem "oj", "~> 2.0.10"
 gem "multi_json", "~> 1.7.2"
 
 gem 'seed-fu'
+gem 'seedbank'
 
 # ActiveRecord enhancement
 gem 'squeel', '~> 1.0.18'
