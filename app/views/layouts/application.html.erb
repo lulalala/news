@@ -7,6 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="./index.html" class="brand">新聞糾正</a>
+          <div class="nav-collapse collapse">
+            <%= render :partial => "common/user_nav"%>
+          </div>
+        </div>
+      </div>
+    </div>
 
 <%= yield %>
 
