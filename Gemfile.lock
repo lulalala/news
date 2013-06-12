@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/lulalala/spork-rails.git
+  revision: 8c1ca27280446a3598cdeaf295c43d2f280afa8f
+  specs:
+    spork-rails (3.2.1)
+      rails (>= 3.0.0, < 3.3.0)
+      spork (>= 1.0.0rc0)
+
+GIT
   remote: git://github.com/lulalala/unobtrusive_flash.git
   revision: 0f91d05db49363832c3e42e208edc16d025b544a
   specs:
@@ -251,7 +259,7 @@ GEM
       actionpack (~> 3.0)
       activemodel (~> 3.0)
     slop (3.4.4)
-    spork (0.9.2)
+    spork (1.0.0rc3)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -329,7 +337,7 @@ DEPENDENCIES
   seed-fu
   shoulda-matchers (~> 1.5.4)
   simple_form (~> 2.1.0)
-  spork (~> 0.9.2)
+  spork-rails!
   sqlite3
   squeel (~> 1.0.18)
   turbo-sprockets-rails3

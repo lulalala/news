@@ -82,7 +82,7 @@ group :development do
   gem "guard", "~> 1.6.2"
   gem 'guard-livereload', "~> 1.1.3"
   gem 'guard-rspec', "~> 2.5.1"
-  gem 'spork', "~> 0.9.2"
+  gem "spork-rails", github:'lulalala/spork-rails'
   gem 'guard-spork', "~> 1.5.0"
   gem 'annotate', "~> 2.5.0"
   gem 'guard-annotate', "~> 1.0.0"
