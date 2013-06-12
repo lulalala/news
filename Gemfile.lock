@@ -91,6 +91,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    colorbox-rails (0.0.14)
+      jquery-rails
+      rails (>= 3.1.1)
     compass (0.12.2)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
@@ -315,6 +318,7 @@ DEPENDENCIES
   capybara (~> 1.1.2)
   cells (~> 3.8.8)
   coffee-rails (~> 3.2.2)
+  colorbox-rails
   compass-rails
   dalli (~> 2.6.2)
   devise
