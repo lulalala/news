@@ -35,11 +35,13 @@ end
 #  id            :integer          not null, primary key
 #  title         :string(255)      not null
 #  reporter_name :string(255)
-#  content       :text             not null
+#  content       :text             default(""), not null
 #  published_at  :datetime
 #  url           :string(255)      not null
 #  company_name  :string(255)
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  web_domain    :string(255)
+#  url_id        :string(255)
 #
 

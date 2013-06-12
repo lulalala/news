@@ -7,3 +7,16 @@ class Article::Line < ActiveRecord::Base
     ActiveModel::Name.new(self, Article)
   end
 end
+
+# == Schema Information
+#
+# Table name: article_lines
+#
+#  id          :integer          not null, primary key
+#  article_id  :integer
+#  line_number :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  text        :text
+#
+

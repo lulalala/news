@@ -6,3 +6,16 @@ class Article::Review < ActiveRecord::Base
     ActiveModel::Name.new(self, Article)
   end
 end
+
+# == Schema Information
+#
+# Table name: article_reviews
+#
+#  id              :integer          not null, primary key
+#  reviewable_id   :integer
+#  reviewable_type :string(64)
+#  text            :text
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
