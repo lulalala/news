@@ -79,9 +79,9 @@ group :development do
 # Guard
   gem 'growl', '~> 1.0.3'
   gem 'rb-fsevent', '~> 0.9.3'
-  gem "guard", "~> 1.6.2"
+  gem "guard", "~> 1.8.0"
   gem 'guard-livereload', "~> 1.1.3"
-  gem 'guard-rspec', "~> 2.5.1"
+  gem 'guard-rspec', "~> 3.0.2"
   gem "spork-rails", github:'lulalala/spork-rails'
   gem 'guard-spork', "~> 1.5.0"
   gem 'annotate', "~> 2.5.0"
@@ -99,7 +99,7 @@ end
 
 group :development, :test do
   gem 'sqlite3'
-  gem "rspec-rails", "~> 2.13.0"
+  gem "rspec-rails", "~> 2.13.2"
 end
 
 gem "letter_opener", :group => :development
