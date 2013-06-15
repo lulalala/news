@@ -2,6 +2,8 @@ class Article::Review < ActiveRecord::Base
   belongs_to :reviewable, polymorphic:true
   attr_accessible :reviewable_type, :reviewable_id, :text
 
+  acts_as_taggable
+
   def self.model_name
     ActiveModel::Name.new(self, Article)
   end
