@@ -29,6 +29,7 @@ class Ability
     # See the wiki for details:
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
     if user
+      can :read, :all
       can :manage, Article
       can :manage, Article::Review
     else # not logged in
