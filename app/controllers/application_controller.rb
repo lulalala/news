@@ -5,6 +5,11 @@ class ApplicationController < ActionController::Base
 
   check_authorization :unless => :devise_controller?
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to root_path, :alert => exception.message
+    redirect_to request.referer, :alert => exception.message
+  end
+
+  before_filter :store_current_location, :unless => :devise_controller?
+  def store_current_location
+    session["user_return_to"] = request.url
   end
 end
