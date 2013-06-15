@@ -101,7 +101,7 @@ GEM
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
     dalli (2.6.2)
-    devise (2.2.3)
+    devise (2.2.4)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (~> 3.1)
@@ -321,7 +321,7 @@ DEPENDENCIES
   colorbox-rails
   compass-rails
   dalli (~> 2.6.2)
-  devise
+  devise (~> 2.2.4)
   factory_girl_rails (~> 4.2.1)
   growl (~> 1.0.3)
   guard (~> 1.8.0)

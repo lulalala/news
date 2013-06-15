@@ -68,7 +68,7 @@ gem "addressable", "~> 2.3.4"
 gem 'kaminari'
 
 # Authentication
-gem 'devise'
+gem 'devise', '~> 2.2.4'
 gem 'cancan'
 
 group :development do
