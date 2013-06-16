@@ -122,6 +122,7 @@ GEM
     ffi (1.7.0)
     formatador (0.2.4)
     fssm (0.2.10)
+    gistyle (0.9.5)
     growl (1.0.3)
     guard (1.8.0)
       formatador (>= 0.2.4)
@@ -323,6 +324,7 @@ DEPENDENCIES
   dalli (~> 2.6.2)
   devise (~> 2.2.4)
   factory_girl_rails (~> 4.2.1)
+  gistyle
   growl (~> 1.0.3)
   guard (~> 1.8.0)
   guard-annotate (~> 1.0.0)
