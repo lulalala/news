@@ -206,6 +206,8 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.4)
+    quiet_assets (1.0.2)
+      railties (>= 3.1, < 5.0)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -348,6 +350,7 @@ DEPENDENCIES
   nifty-generators (~> 0.4.6)
   nokogiri
   oj (~> 2.0.10)
+  quiet_assets
   rails (= 3.2.13)
   rb-fsevent (~> 0.9.3)
   rspec-cells (~> 0.1.7)

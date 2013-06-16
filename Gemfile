@@ -75,6 +75,7 @@ gem 'cancan'
 group :development do
   gem "nifty-generators", "~> 0.4.6"
   gem "better_errors"
+  gem 'quiet_assets'
 
   # To use debugger
   # gem 'debugger'
