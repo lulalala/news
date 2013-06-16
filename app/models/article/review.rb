@@ -1,6 +1,6 @@
 class Article::Review < ActiveRecord::Base
   belongs_to :reviewable, polymorphic:true
-  attr_accessible :reviewable_type, :reviewable_id, :text
+  attr_accessible :reviewable_type, :reviewable_id, :text, :tag_list
 
   acts_as_taggable
 

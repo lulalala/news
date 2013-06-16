@@ -15,6 +15,8 @@ class Article::ReviewsController < ApplicationController
     if @review.save
       redirect_to articles_path
     else
+      logger.debug @review.errors
+      #flash[:error] = @review.tags.map{|t| t.errors.full_messages}
       render :new
     end
   end
