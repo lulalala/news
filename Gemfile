@@ -59,7 +59,7 @@ gem "anjlab-bootstrap-rails", :require => "bootstrap-rails"
 gem "bootstrap_helper"
 
 gem 'unobtrusive_flash', git: 'git://github.com/lulalala/unobtrusive_flash.git'
-gem 'colorbox-rails'
+gem 'colorbox-rails', github:'lazywei/colorbox-rails'
 
 # Fetch
 gem 'nokogiri'

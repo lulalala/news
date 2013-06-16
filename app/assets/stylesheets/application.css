@@ -12,4 +12,5 @@
  *= require_tree .
  *= require common
  *= require unobtrusive_flash
+ *= require colorbox-rails
  */

@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require unobtrusive_flash
+//= require colorbox-rails
 //= require gistyle
 //= require_tree .
