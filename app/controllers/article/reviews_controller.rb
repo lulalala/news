@@ -13,7 +13,7 @@ class Article::ReviewsController < ApplicationController
 
   def create
     if @review.save
-      redirect_to articles_path
+      redirect_to review_article_path(@review.reviewable.article)
     else
       logger.debug @review.errors
       #flash[:error] = @review.tags.map{|t| t.errors.full_messages}
