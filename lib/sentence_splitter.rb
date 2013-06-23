@@ -5,7 +5,7 @@ class SentenceSplitter
                     「.*?」  # a quoted sentence
                   |         # or
                     [^「」『』。？！]*   # anything except quotes or dots.
-                  )+        # Repeat as needed
+                  )++        # Repeat as needed; avoid backtracking
                   [。？！]\s*     # Then match a dot and optionally some whitespace.
                   /x
     sentences = text.scan(regular_exp)
