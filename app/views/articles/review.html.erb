@@ -1,7 +1,7 @@
 <table class="table">
 <% @article.lines.each do |l| %>
   <tr>
-    <td>
+    <td class="span6">
       <%= l.text %>
     </td>
     <td>
@@ -9,6 +9,7 @@
     </td>
     <% l.reviews.each do |r| %>
       <td>
+        <span class="label"><%= r.tags.first.try(:name) %></span>
         <%= r.text %>
       </td>
     <% end %>
