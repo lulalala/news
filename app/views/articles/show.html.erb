@@ -27,7 +27,22 @@ body{
 
 <div class="review">
   <% title "Article" %>
-
+  <p>
+    <%= link_to "糾正本篇新聞", review_article_path(@article), class:'btn btn-warning' %>
+  </p>
+  <% @article.lines.each do |l| %>
+    <% if l.reviews.present? %>
+    <div class="well">
+      <blockquote><%= l.text %></blockquote>
+      <% l.reviews.each do |r| %>
+        <span class="label"><%= r.tags.first.try(:name) %></span>
+        <%= r.text %>
+        <br />
+      <% end %>
+    </div>
+    <% end %>
+  <% end %>
+<!--
   <p>
     <strong>Title:</strong>
     <%= @article.title %>
@@ -67,9 +82,5 @@ body{
     <strong>Company Name:</strong>
     <%= @article.company_name %>
   </p>
-  
-  <p>
-    <%= link_to "View All", articles_path %>
-    <%= link_to "Review", review_article_path(@article) %>
-  </p>
+  -->
 </div>

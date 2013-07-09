@@ -1,7 +1,7 @@
 <% title "Articles" %>
 <%= form_tag articles_path do %>
   <%= url_field_tag :url %>
-  <%= submit_tag '噓新聞' %>
+  <%= submit_tag '糾正新聞', class:'btn btn-primary' %>
 <% end %>
 
 <% @articles.each do |article| %>
