@@ -1,4 +1,9 @@
 <table class="table">
+  <thead>
+    <th class="content">內文</th>
+    <th class="control"></th>
+  </thead>
+  <tbody>
 <% @article.lines.each do |l| %>
   <tr>
     <td class="span6">
@@ -15,4 +20,5 @@
     <% end %>
   </tr>
 <% end %>
+</tbody>
 </table>
