@@ -72,6 +72,8 @@ gem 'kaminari'
 gem 'devise', '~> 2.2.4'
 gem 'cancan'
 
+gem "settingslogic", "~> 2.0.9"
+
 group :development do
   gem "nifty-generators", "~> 0.4.6"
   gem "better_errors"
