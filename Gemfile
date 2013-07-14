@@ -64,6 +64,7 @@ gem 'colorbox-rails', github:'lazywei/colorbox-rails'
 # Fetch
 gem 'nokogiri'
 gem "addressable", "~> 2.3.4"
+gem 'taiwanese_news_parser', github:'lulalala/taiwanese_news_parser'
 
 # Pagination
 gem 'kaminari'

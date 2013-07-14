@@ -7,15 +7,19 @@ class ArticlesController < ApplicationController
 
   def create
     url = params[:url]
-    fetcher = Fetcher.applicable_fetcher(url)
+    parser = TaiwaneseNewsParser.new(url)
 
     # Use article if already fetched before
-    if @article = fetcher.find_existing(url)
+    if @article = Article.find_existing(parser.article[:web_domain], parser.article[:url_id])
       redirect_to review_article_path(@article) and return
     end
 
     begin
-      @article = fetcher.fetch
+      hash = parser.parse
+      @article = Article.new(hash.except(:web_domain, :url_id, :reproduced))
+      @article.web_domain = hash[:web_domain]
+      @article.url_id = hash[:url_id]
+
       if @article.save
         redirect_to review_article_path(@article)
       else
