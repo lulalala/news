@@ -48,6 +48,7 @@ gem 'seedbank'
 
 # ActiveRecord enhancement
 gem 'squeel', '~> 1.0.18'
+gem "counter_culture", "~> 0.1.12"
 
 # View
 gem 'cells', '~> 3.8.8'
