@@ -9,6 +9,15 @@ class ArticlesController < ApplicationController
     url = params[:url]
     parser = TaiwaneseNewsParser.new(url)
 
+    if parser.nil? || ( parser.article[:web_domain].blank? ||  parser.article[:url_id].blank? )
+      logger.parser.error(url)
+      if Rails.env.development?
+        raise # debugging
+      end
+      flash[:error] = '抱歉，這篇新聞抓取時發生問題，已經通知站長，預計一週內會修復。'
+      redirect_to action: :index and return
+    end
+
     # Use article if already fetched before
     if @article = Article.find_existing(parser.article[:web_domain], parser.article[:url_id])
       redirect_to review_article_path(@article) and return
