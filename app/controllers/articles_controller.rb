@@ -17,6 +17,7 @@ class ArticlesController < ApplicationController
     begin
       hash = parser.parse
     rescue
+      logger.parser.error(url)
       if Rails.env.development?
         raise # debugging
       end

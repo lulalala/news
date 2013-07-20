@@ -3,4 +3,4 @@ formatter = Proc.new{|severity, time, progname, msg|
   formatted_time = time.strftime("%Y-%m-%d %H:%M:%S")
   "[#{formatted_severity} #{formatted_time}] #{msg.strip}\n"
 }
-MultiLogger.add_logger('fetcher', formatter:formatter)
+MultiLogger.add_logger('parser', formatter:formatter)
