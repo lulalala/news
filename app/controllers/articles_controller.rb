@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
       if Rails.env.development?
         raise # debugging
       end
-      flash[:error] = '抱歉，這篇新聞還無法自動抓取，已經通知站長，將會找時間改進。'
+      flash[:error] = '抱歉，這篇新聞抓取時發生問題，已經通知站長，預計一週內會修復。'
       redirect_to action: :index and return
     end
   end
