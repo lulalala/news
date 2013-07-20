@@ -61,6 +61,8 @@ gem "bootstrap_helper"
 gem 'unobtrusive_flash', git: 'git://github.com/lulalala/unobtrusive_flash.git'
 gem 'colorbox-rails', github:'lazywei/colorbox-rails'
 
+gem "high_voltage"
+
 # Fetch
 gem 'nokogiri'
 gem "addressable", "~> 2.3.4"
