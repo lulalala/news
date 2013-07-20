@@ -16,6 +16,11 @@
           <span class="icon-bar"></span>
         </button>
         <%= link_to '新聞糾正', root_url, class:"brand" %>
+        <ul class="nav">
+          <li>
+            <%= link_to '《關於本站以及誠徵工作人員》', page_path('about') %>
+          </li>
+        </ul>
         <div class="nav-collapse collapse">
           <%= render :partial => "common/user_nav"%>
         </div>
