@@ -16,26 +16,27 @@ class ArticlesController < ApplicationController
 
     begin
       hash = parser.parse
-      @article = Article.new(hash.except(:web_domain, :url_id, :reproduced))
-      @article.web_domain = hash[:web_domain]
-      @article.url_id = hash[:url_id]
-
-      if @article.save
-        redirect_to review_article_path(@article)
-      else
-        puts @article.errors[:base].inspect
-        puts @article.valid?
-        if @article.errors[:base].find{|e| e.include?('新聞轉載')}
-          render :reproduced and return
-        end
-        redirect_to @article
-      end
     rescue
       if Rails.env.development?
         raise # debugging
       end
       flash[:error] = '抱歉，這篇新聞抓取時發生問題，已經通知站長，預計一週內會修復。'
       redirect_to action: :index and return
+    end
+
+    @article = Article.new(hash.except(:web_domain, :url_id, :reproduced))
+    @article.web_domain = hash[:web_domain]
+    @article.url_id = hash[:url_id]
+
+    if @article.save
+      redirect_to review_article_path(@article)
+    else
+      puts @article.errors[:base].inspect
+      puts @article.valid?
+      if @article.errors[:base].find{|e| e.include?('新聞轉載')}
+        render :reproduced and return
+      end
+      redirect_to @article
     end
   end
 
