@@ -26,5 +26,10 @@ class Article::ReviewsController < ApplicationController
   end
 
   def destroy
+    if @review.destroy
+    else
+      flash[:error] = '刪除失敗'
+    end
+    redirect_to :back
   end
 end

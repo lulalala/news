@@ -31,7 +31,7 @@ class Ability
     if user
       can :read, :all
       can :manage, Article
-      can :manage, Article::Review
+      can :manage, Article::Review, :user_id => user.id
     else # not logged in
       can :read, :all
     end

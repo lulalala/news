@@ -38,6 +38,11 @@ body{
         <span class="label"><%= r.tags.first.try(:name) %></span>
         <%= r.text %>
         <br />
+        <% if can?(:destroy, r) %>
+          <div class='control'>
+            <%= link_to '刪除', review_path(r), method:'delete', class:'btn btn-danger' %>
+          </div>
+        <% end %>
       <% end %>
     </div>
     <% end %>
