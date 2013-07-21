@@ -55,6 +55,7 @@ class ArticlesController < ApplicationController
 
   # GET
   def review
+    ActiveRecord::Associations::Preloader.new(@article,:lines => :reviews).run()
   end
 
   def update
