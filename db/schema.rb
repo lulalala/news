@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130526124320) do
+ActiveRecord::Schema.define(:version => 20130720145016) do
 
   create_table "article_lines", :force => true do |t|
     t.integer  "article_id"
@@ -34,16 +34,17 @@ ActiveRecord::Schema.define(:version => 20130526124320) do
   add_index "article_reviews", ["reviewable_id", "reviewable_type"], :name => "index_article_reviews_on_reviewable_id_and_reviewable_type"
 
   create_table "articles", :force => true do |t|
-    t.string   "title",         :null => false
+    t.string   "title",                             :null => false
     t.string   "reporter_name"
-    t.text     "content",       :null => false
+    t.text     "content",                           :null => false
     t.datetime "published_at"
-    t.string   "url",           :null => false
+    t.string   "url",                               :null => false
     t.string   "company_name"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
     t.string   "web_domain"
     t.string   "url_id"
+    t.integer  "line_reviews_count", :default => 0, :null => false
   end
 
   add_index "articles", ["web_domain", "url_id"], :name => "index_articles_on_web_domain_and_url_id", :unique => true

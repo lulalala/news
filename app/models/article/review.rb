@@ -2,10 +2,21 @@ class Article::Review < ActiveRecord::Base
   belongs_to :reviewable, polymorphic:true
   attr_accessible :reviewable_type, :reviewable_id, :text, :tag_list
 
+  after_commit :update_article_counter
+
   acts_as_taggable
 
   def self.model_name
     ActiveModel::Name.new(self, Article)
+  end
+
+  def update_article_counter
+    if reviewable_type == 'Article::Line'
+      logger.debug('hihi')
+      article = reviewable.article
+      count = article.line_reviews.count
+      article.update_column(:line_reviews_count, count)
+    end
   end
 end
 
