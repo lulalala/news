@@ -30,8 +30,7 @@ body{
   <p>
     <%= link_to "糾正本篇新聞", review_article_path(@article), class:'btn btn-warning' %>
   </p>
-  <% @article.lines.each do |l| %>
-    <% if l.reviews.present? %>
+  <% @article.lines.where{reviews_count > 0}.each do |l| %>
     <div class="well">
       <blockquote><%= l.text %></blockquote>
       <% l.reviews.each do |r| %>
@@ -45,7 +44,6 @@ body{
         <% end %>
       <% end %>
     </div>
-    <% end %>
   <% end %>
 <!--
   <p>
