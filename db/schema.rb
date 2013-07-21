@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130720145016) do
+ActiveRecord::Schema.define(:version => 20130721033139) do
 
   create_table "article_lines", :force => true do |t|
     t.integer  "article_id"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20130720145016) do
     t.text     "text"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+    t.integer  "user_id",                       :null => false
   end
 
   add_index "article_reviews", ["reviewable_id", "reviewable_type"], :name => "index_article_reviews_on_reviewable_id_and_reviewable_type"

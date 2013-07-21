@@ -12,6 +12,7 @@ class Article::ReviewsController < ApplicationController
   end
 
   def create
+    @review.user = current_user
     if @review.save
       redirect_to review_article_path(@review.reviewable.article)
     else
