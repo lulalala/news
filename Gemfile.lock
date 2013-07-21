@@ -16,7 +16,7 @@ GIT
 
 GIT
   remote: git://github.com/lulalala/taiwanese_news_parser.git
-  revision: 4fe5fd73cf4ad67a1fc0a6f3783276dd6537ed74
+  revision: a711c0bf7024bbc62ffa20b33f193cbf236ebba2
   specs:
     taiwanese_news_parser (0.0.1)
       addressable (~> 2.0)
@@ -191,7 +191,7 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    memoist (0.9.0)
+    memoist (0.9.1)
     meta-tags (1.4.1)
       actionpack
     metaclass (0.0.1)
