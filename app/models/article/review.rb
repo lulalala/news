@@ -12,7 +12,6 @@ class Article::Review < ActiveRecord::Base
 
   def update_article_counter
     if reviewable_type == 'Article::Line'
-      logger.debug('hihi')
       article = reviewable.article
       count = article.line_reviews.count
       article.update_column(:line_reviews_count, count)
