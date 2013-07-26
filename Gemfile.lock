@@ -124,6 +124,7 @@ GEM
       orm_adapter (~> 0.1)
       railties (~> 3.1)
       warden (~> 1.2.1)
+    devise-i18n (0.8.6)
     diff-lcs (1.2.4)
     em-websocket (0.5.0)
       eventmachine (>= 0.12.9)
@@ -349,6 +350,7 @@ DEPENDENCIES
   counter_culture (~> 0.1.12)
   dalli (~> 2.6.2)
   devise (~> 2.2.4)
+  devise-i18n
   factory_girl_rails (~> 4.2.1)
   gistyle
   growl (~> 1.0.3)

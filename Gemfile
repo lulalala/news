@@ -74,6 +74,7 @@ gem 'kaminari'
 
 # Authentication
 gem 'devise', '~> 2.2.4'
+gem 'devise-i18n'
 gem 'cancan'
 
 gem "settingslogic", "~> 2.0.9"
