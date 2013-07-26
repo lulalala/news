@@ -4,7 +4,7 @@
     <div class="social"><%#=  fb_like(Setting.domain) %></div>
   </li>
 
-<% if current_user %>
+<% if current_user && !current_user.guest? %>
 
   <li class="dropdown">
     <%= link_to "#" , :class => "dropdown-toggle", :data => { :toggle => "dropdown" } do %>
@@ -16,6 +16,16 @@
     end %>
 
   </li>
+
+<% elsif current_user && current_user.guest? %>
+
+  <li class="dropdown">
+    <%= link_to "#" , :class => "dropdown-toggle", :data => { :toggle => "dropdown" } do %>
+      目前身分：訪客(可使用全部功能)
+    <% end %>
+  </li>
+  <li><%= link_to( "註冊" ,new_user_registration_path) %></li>
+  <li><%= link_to( "登入", new_user_session_path ) %></li>
 
 <% else %>
 
