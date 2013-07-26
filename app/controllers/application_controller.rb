@@ -17,3 +17,23 @@ class ApplicationController < ActionController::Base
     session["user_return_to"] = request.url
   end
 end
+
+# To redefine current_user
+class ApplicationController < ActionController::Base
+  def self.method_added(method_name)
+    if instance_methods.include?(:current_user) && !instance_methods.include?(:devise_current_user)
+      redefine_current_user()
+    end
+  end
+  def self.redefine_current_user
+    alias_method :devise_current_user, :current_user
+    define_method :current_user do
+      user = devise_current_user
+      if !user && !devise_controller?
+        # Guest user
+        user = User.find(100)
+      end
+      return user
+    end
+  end
+end
