@@ -10,12 +10,7 @@ class ArticlesController < ApplicationController
     parser = TaiwaneseNewsParser.new(url)
 
     if parser.nil? || ( parser.article[:web_domain].blank? ||  parser.article[:url_id].blank? )
-      logger.parser.error(url)
-      if Rails.env.development?
-        raise # debugging
-      end
-      flash[:error] = '抱歉，這篇新聞抓取時發生問題，已經通知站長，預計一週內會修復。'
-      redirect_to action: :index and return
+      raise # debugging
     end
 
     # Use article if already fetched before
@@ -23,16 +18,7 @@ class ArticlesController < ApplicationController
       redirect_to review_article_path(@article) and return
     end
 
-    begin
-      hash = parser.parse
-    rescue
-      logger.parser.error(url)
-      if Rails.env.development?
-        raise # debugging
-      end
-      flash[:error] = '抱歉，這篇新聞抓取時發生問題，已經通知站長，預計一週內會修復。'
-      redirect_to action: :index and return
-    end
+    hash = parser.parse
 
     @article = Article.new(hash.except(:web_domain, :url_id, :reproduced))
     @article.web_domain = hash[:web_domain]
@@ -47,6 +33,14 @@ class ArticlesController < ApplicationController
         render :reproduced and return
       end
       redirect_to @article
+    end
+  rescue
+    logger.parser.error(params[:url])
+    if Rails.env.development?
+      raise
+    else
+      flash[:error] = '抱歉，這篇新聞抓取時發生問題，已經通知站長，預計一週內會修復。'
+      redirect_to action: :index
     end
   end
 
