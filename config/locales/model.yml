@@ -1,0 +1,16 @@
+zh-TW:
+  activerecord:
+    models:
+      article/review: 糾正
+      user: 使用者
+    attributes:
+      article/review:
+        text: 內容
+      user:
+        password: 密碼
+        password_confirmation: 再輸入一次密碼
+
+  helpers:
+    label:
+      user:
+        remember_me: 記得設定
