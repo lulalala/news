@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130721065110) do
+ActiveRecord::Schema.define(:version => 20131102052410) do
 
   create_table "article_lines", :force => true do |t|
     t.integer  "article_id"
@@ -50,6 +50,19 @@ ActiveRecord::Schema.define(:version => 20130721065110) do
   end
 
   add_index "articles", ["web_domain", "url_id"], :name => "index_articles_on_web_domain_and_url_id", :unique => true
+
+  create_table "rails_admin_histories", :force => true do |t|
+    t.text     "message"
+    t.string   "username"
+    t.integer  "item"
+    t.string   "table"
+    t.integer  "month",      :limit => 2
+    t.integer  "year",       :limit => 8
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"
