@@ -28,7 +28,7 @@ gem 'jquery-rails', '~> 3.0.4'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy
 gem 'capistrano'
