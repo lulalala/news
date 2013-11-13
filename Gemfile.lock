@@ -230,6 +230,7 @@ GEM
       mini_portile (~> 0.5.0)
     oj (2.0.10)
     orm_adapter (0.4.0)
+    pg (0.17.0)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
@@ -408,6 +409,7 @@ DEPENDENCIES
   nifty-generators (~> 0.4.6)
   nokogiri
   oj (~> 2.0.10)
+  pg
   quiet_assets
   rails (= 3.2.13)
   rails_admin
