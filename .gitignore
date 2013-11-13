@@ -18,3 +18,4 @@
 
 # Ignore settings
 /config/app_config.yml
+/config/database.yml
