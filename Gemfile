@@ -19,6 +19,10 @@ group :assets do
   gem 'gistyle'
 end
 
+group :production do
+  gem 'newrelic_rpm'
+end
+
 gem 'jquery-rails', '~> 3.0.4'
 
 # To use ActiveModel has_secure_password

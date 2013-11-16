@@ -226,6 +226,7 @@ GEM
     net-ssh (2.6.7)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
+    newrelic_rpm (3.6.9.171)
     nifty-generators (0.4.6)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
@@ -412,6 +413,7 @@ DEPENDENCIES
   multi_json (~> 1.7.2)
   multi_logger
   mysql2
+  newrelic_rpm
   nifty-generators (~> 0.4.6)
   nokogiri
   oj (~> 2.0.10)
