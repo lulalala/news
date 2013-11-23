@@ -15,4 +15,5 @@
 //= require unobtrusive_flash
 //= require colorbox-rails
 //= require gistyle
+//= require persona
 //= require_tree .

@@ -82,6 +82,7 @@ gem 'kaminari'
 gem 'devise', '~> 3.1.0'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem "devise_browserid_authenticatable"
 gem 'cancan'
 
 gem "settingslogic", "~> 2.0.9"
