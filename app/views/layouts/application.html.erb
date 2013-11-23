@@ -3,7 +3,6 @@
 <head>
   <title>新聞糾正</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= controller_name %> <%= action_name %>" data-controller="<%= controller_name %>" data-action="<%= action_name %>">
@@ -30,6 +29,7 @@
 
 <%= yield %>
 
-<%= browserid_js_tag %>
+  <%= browserid_js_tag %>
+  <%= javascript_include_tag "application" %>
 </body>
 </html>
