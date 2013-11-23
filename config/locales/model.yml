@@ -3,12 +3,15 @@ zh-TW:
     models:
       article/review: 糾正
       user: 使用者
+      suggestion: 意見
     attributes:
       article/review:
         text: 內容
       user:
         password: 密碼
         password_confirmation: 再輸入一次密碼
+      suggestion:
+        content: 意見
 
   helpers:
     label:

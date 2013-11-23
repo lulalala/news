@@ -16,6 +16,7 @@ NewsSucks::Application.routes.draw do
   scope module: 'article' do
     resources :reviews
   end
+  resources :suggestions, only:[:new, :create]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
