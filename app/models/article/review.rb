@@ -7,6 +7,10 @@ class Article::Review < ActiveRecord::Base
 
   acts_as_taggable
 
+  auto_html_for :text do
+    link :target => "_blank", :rel => "nofollow"
+  end
+
   def self.model_name
     ActiveModel::Name.new(self, Article)
   end

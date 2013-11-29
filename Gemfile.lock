@@ -71,6 +71,9 @@ GEM
       rake
     arel (3.0.2)
     atomic (1.1.14)
+    auto_html (1.6.0)
+      redcarpet (~> 2.0)
+      rinku (~> 1.5.0)
     bcrypt-ruby (3.1.2)
     better_errors (0.8.0)
       coderay (>= 1.0.0)
@@ -293,7 +296,9 @@ GEM
       ffi (>= 0.5.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    redcarpet (2.2.2)
     remotipart (1.2.1)
+    rinku (1.5.1)
     rspec (2.13.0)
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
@@ -382,6 +387,7 @@ DEPENDENCIES
   addressable (~> 2.3.4)
   anjlab-bootstrap-rails
   annotate (~> 2.5.0)
+  auto_html (~> 1.6.0)
   better_errors
   bootstrap_helper
   cancan

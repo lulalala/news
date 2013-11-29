@@ -17,7 +17,7 @@
     <% l.reviews.each do |r| %>
       <td>
         <span class="label"><%= r.tags.first.try(:name) %></span>
-        <%= r.text %>
+        <%= r.text_html %>
       </td>
     <% end %>
   </tr>

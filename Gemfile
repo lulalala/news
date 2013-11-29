@@ -70,6 +70,8 @@ gem 'colorbox-rails', github:'lazywei/colorbox-rails'
 
 gem "high_voltage"
 
+gem 'auto_html', '~> 1.6.0'
+
 # Fetch
 gem 'nokogiri'
 gem "addressable", "~> 2.3.4"
