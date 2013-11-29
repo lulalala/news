@@ -16,7 +16,7 @@ GIT
 
 GIT
   remote: git://github.com/lulalala/taiwanese_news_parser.git
-  revision: f0cf913e660753ba809a34dc10e11de56e6a035e
+  revision: b1746856d3df085657c5f6ec1830bbe76de70f89
   specs:
     taiwanese_news_parser (0.0.1)
       addressable (~> 2.0)
@@ -216,7 +216,7 @@ GEM
     metaclass (0.0.1)
     method_source (0.8.1)
     mime-types (1.22)
-    mini_portile (0.5.1)
+    mini_portile (0.5.2)
     mocha (0.13.3)
       metaclass (~> 0.0.1)
     multi_json (1.7.9)
