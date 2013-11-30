@@ -20,13 +20,23 @@ body{
   padding:2em;
 }
 </style>
+<%
+set_meta_tags(
+  title: [@article.company_name, @article.title],
+  description: "關於「#{@article.title}」這篇報導，目前有#{@article.lines.where{reviews_count > 0}.count}個糾正。",
+  og:{
+    title: "新聞糾正：#{@article.company_name} #{@article.title}",
+    type: 'article',
+    url: article_url(@article)
+  }
+)
+%>
 
 <div class="source">
   <iframe src="<%= @article.url %>"></iframe>
 </div>
 
 <div class="review">
-  <% title "Article" %>
   <p>
     <%= link_to "糾正本篇新聞", review_article_path(@article), class:'btn btn-warning' %>
   </p>

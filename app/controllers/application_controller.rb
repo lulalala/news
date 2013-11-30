@@ -16,6 +16,14 @@ class ApplicationController < ActionController::Base
   def store_current_location
     session["user_return_to"] = request.url
   end
+
+  before_filter :set_default_metatags
+  def set_default_metatags
+    set_meta_tags(
+      site:'新聞糾正',
+      separator:'-'
+    )
+  end
 end
 
 # To redefine current_user

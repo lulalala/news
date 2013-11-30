@@ -1,4 +1,13 @@
-<% title "Articles" %>
+<%
+set_meta_tags(
+  description:'紀錄新聞錯誤，改善新聞品質。',
+  og:{
+    url:root_url,
+    title:'新聞糾正',
+    type:'website'
+  }
+)
+%>
 <%= form_tag articles_path do %>
   <%= url_field_tag :url, nil, placeholder:'貼上新聞 url 開始糾正' %>
   <%= submit_tag '糾正新聞', class:'btn btn-primary btn-large' %>
