@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131123015034) do
+ActiveRecord::Schema.define(:version => 20131205021135) do
 
   create_table "article_lines", :force => true do |t|
     t.integer  "article_id"
@@ -50,6 +50,16 @@ ActiveRecord::Schema.define(:version => 20131123015034) do
   end
 
   add_index "articles", ["web_domain", "url_id"], :name => "index_articles_on_web_domain_and_url_id", :unique => true
+
+  create_table "identities", :force => true do |t|
+    t.integer "user_id"
+    t.string  "uid"
+    t.string  "provider"
+    t.text    "raw"
+  end
+
+  add_index "identities", ["uid"], :name => "index_identities_on_uid"
+  add_index "identities", ["user_id"], :name => "index_identities_on_user_id"
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
