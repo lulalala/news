@@ -3,6 +3,8 @@ class Identity < ActiveRecord::Base
 
   attr_accessible :uid, :provider, :raw
 
+  serialize :raw
+
   def self.find_with_omniauth(auth)
     find_by_provider_and_uid(auth['provider'], auth['uid'])
   end
