@@ -18,6 +18,9 @@ NewsSucks::Application.routes.draw do
   end
   resources :suggestions, only:[:new, :create]
 
+  resources :identities, only:[:index, :create, :destroy]
+  match '/auth/:provider/callback', to: 'identities#create'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

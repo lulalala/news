@@ -29,17 +29,22 @@ class Ability
     # See the wiki for details:
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
     if user
-      can :read, :all
+      can :read, [ Article, Article::Line, Article::Review ]
+
       can [ :create, :review ], Article
       can :manage, Article::Review, :user_id => user.id
+
+      can :manage, Identity, :user_id => user.id
 
       if user.admin?
         can :access, :rails_admin   # grant access to rails_admin
         can :dashboard              # grant access to the dashboard
         can :manage, :all
+      elsif user.guest?
+        cannot :manage, Identity # exception
       end
     else # not logged in
-      can :read, :all
+      can :read, [ Article, Article::Line, Article::Review ]
     end
   end
 end

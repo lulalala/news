@@ -1,0 +1,14 @@
+目前連結的網路身分：
+<ul>
+<% @identities.each do |identity| %>
+  <li>
+    <%= identity.provider %> - 
+    <%= identity.uid %>
+  </li>
+<% end %>
+</ul>
+
+<ul>
+  <li><%= link_to '連結 Facebook 帳號', '/auth/facebook' %></li>
+  <li><%= link_to '連結 Dev 帳號', '/auth/developer' %></li>
+</ul>
