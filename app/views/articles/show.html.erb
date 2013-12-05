@@ -45,12 +45,12 @@ set_meta_tags(
       <blockquote><%= l.text %></blockquote>
       <% l.reviews.each do |r| %>
         <span class="label"><%= r.tags.first.try(:name) %></span>
-        <%= r.text_html %>
         <% if r.involved_personally? %>
-          <%= link_to r.user do %>
+          <%= link_to r.user, :data => { :colorbox => true } do %>
             <span class='label label-warning' style='text-decoration:underline'>我是當事人</span>
           <% end %>
         <% end %>
+        <%= r.text_html %>
         <br />
         <% if can?(:destroy, r) %>
           <div class='control'>
