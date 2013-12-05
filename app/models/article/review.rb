@@ -1,7 +1,7 @@
 class Article::Review < ActiveRecord::Base
   belongs_to :reviewable, polymorphic:true, counter_cache: true
   belongs_to :user
-  attr_accessible :reviewable_type, :reviewable_id, :text, :tag_list
+  attr_accessible :reviewable_type, :reviewable_id, :text, :tag_list, :involved_personally
 
   after_commit :update_article_counter
 
@@ -28,12 +28,13 @@ end
 #
 # Table name: article_reviews
 #
-#  id              :integer          not null, primary key
-#  reviewable_id   :integer
-#  reviewable_type :string(64)
-#  text            :text
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  user_id         :integer          not null
+#  id                  :integer          not null, primary key
+#  reviewable_id       :integer
+#  reviewable_type     :string(64)
+#  text                :text
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  user_id             :integer          not null
+#  involved_personally :boolean          default(FALSE), not null
 #
 

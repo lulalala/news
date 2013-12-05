@@ -9,6 +9,9 @@
         <span class="label label-warning"><%= tag %></span>
       <% end %>
       <%= truncate(lr.text, length:30) %>
+      <% if lr.involved_personally? %>
+        <span>我是當事人</span>
+      <% end %>
     </div>
   <% end %>
   </div>

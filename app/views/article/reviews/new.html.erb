@@ -1,6 +1,9 @@
 <%= simple_form_for @review do |f| %>
   <%= f.input :text, input_html:{style:'height:150px;width:600px'} %>
   <%= f.select :tag_list, ActsAsTaggableOn::Tag.pluck(:name), {}, {:multiple => true, :class => "chzn-select", :style => "width:450px;" } %>
+  <% if current_user.identities.exists? %>
+    <%= f.input :involved_personally %>
+  <% end %>
   <%= f.hidden_field :reviewable_id %>
   <%= f.hidden_field :reviewable_type %>
   <%= f.submit %>

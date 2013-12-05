@@ -7,6 +7,7 @@ zh-TW:
     attributes:
       article/review:
         text: 內容
+        involved_personally: 當事人
       user:
         password: 密碼
         password_confirmation: 再輸入一次密碼
