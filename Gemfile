@@ -87,6 +87,9 @@ gem 'devise-i18n-views'
 gem "devise_browserid_authenticatable"
 gem 'cancan'
 
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 gem "settingslogic", "~> 2.0.9"
 
 gem "rails_admin"
