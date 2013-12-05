@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   check_authorization :unless => :do_not_check_authorization?
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to request.referer, :alert => exception.message
+    redirect_to ( request.referer || root_url ), :alert => exception.message
   end
   def do_not_check_authorization?
     respond_to?(:devise_controller?) or
