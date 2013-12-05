@@ -12,11 +12,12 @@ end
 #
 # Table name: article_lines
 #
-#  id          :integer          not null, primary key
-#  article_id  :integer
-#  line_number :integer
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  text        :text
+#  id            :integer          not null, primary key
+#  article_id    :integer
+#  line_number   :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  text          :text
+#  reviews_count :integer          default(0), not null
 #
 
