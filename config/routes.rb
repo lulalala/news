@@ -18,6 +18,8 @@ NewsSucks::Application.routes.draw do
   end
   resources :suggestions, only:[:new, :create]
 
+  resources :users, only:[:show]
+
   resources :identities, only:[:index, :create, :destroy]
   match '/auth/:provider/callback', to: 'identities#create'
 

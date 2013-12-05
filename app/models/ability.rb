@@ -29,7 +29,7 @@ class Ability
     # See the wiki for details:
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
     if user
-      can :read, [ Article, Article::Line, Article::Review ]
+      can :read, [ Article, Article::Line, Article::Review, User ]
 
       can [ :create, :review ], Article
       can :manage, Article::Review, :user_id => user.id
@@ -44,7 +44,7 @@ class Ability
         cannot :manage, Identity # exception
       end
     else # not logged in
-      can :read, [ Article, Article::Line, Article::Review ]
+      can :read, [ Article, Article::Line, Article::Review, User ]
     end
   end
 end

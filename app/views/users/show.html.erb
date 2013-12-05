@@ -1,6 +1,6 @@
-目前認證過的網路身分：
+<h2>本使用者認證過的網路身分</h2>
 <ul>
-<% @identities.each do |identity| %>
+<% @user.identities.each do |identity| %>
   <%
     url = identity.raw['info']['urls'].try(:first).try(:last)
     image = identity.raw['info']['image']
@@ -11,11 +11,4 @@
     <%= image_tag image if image %>
   </li>
 <% end %>
-</ul>
-<hr/>
-<ul>
-  <li><%= link_to '連結 Facebook 帳號', '/auth/facebook' %></li>
-  <% if Rails.env.development? %>
-    <li><%= link_to '連結 Dev 帳號', '/auth/developer' %></li>
-  <% end %>
 </ul>
