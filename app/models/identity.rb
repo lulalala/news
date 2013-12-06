@@ -10,7 +10,7 @@ class Identity < ActiveRecord::Base
   end
 
   def self.create_with_omniauth(auth)
-    create(uid: auth['uid'], provider: auth['provider'], raw:auth)
+    create(uid: auth['uid'], provider: auth['provider'], raw:auth.to_hash)
   end
 end
 
