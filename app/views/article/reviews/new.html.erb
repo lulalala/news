@@ -3,6 +3,8 @@
   <%= f.select :tag_list, ActsAsTaggableOn::Tag.pluck(:name), {}, {:multiple => true, :class => "chzn-select", :style => "width:450px;" } %>
   <% if current_user.identities.exists? %>
     <%= f.input :involved_personally %>
+  <% else %>
+    如果您是當事人，請登入後在右上角作Facebook認證再來評論。
   <% end %>
   <%= f.hidden_field :reviewable_id %>
   <%= f.hidden_field :reviewable_type %>
