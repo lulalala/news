@@ -1,7 +1,7 @@
 class Identity < ActiveRecord::Base
   belongs_to :user
 
-  attr_accessible :uid, :provider, :raw
+  attr_accessible :uid, :provider, :raw, :url, :image
 
   serialize :raw, CustomOj
 
@@ -10,7 +10,13 @@ class Identity < ActiveRecord::Base
   end
 
   def self.create_with_omniauth(auth)
-    create(uid: auth['uid'], provider: auth['provider'], raw:auth.to_hash)
+    create(
+      uid: auth.uid,
+      provider: auth.provider,
+      url: auth.info.urls.try(:Facebook),
+      image: auth.info.image,
+      raw: auth.to_hash
+    )
   end
 end
 
@@ -23,5 +29,7 @@ end
 #  uid      :string(255)
 #  provider :string(255)
 #  raw      :text
+#  url      :string(255)
+#  image    :string(255)
 #
 

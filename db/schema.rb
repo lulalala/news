@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131205151344) do
+ActiveRecord::Schema.define(:version => 20131206121839) do
 
   create_table "article_lines", :force => true do |t|
     t.integer  "article_id"
@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(:version => 20131205151344) do
     t.string  "uid"
     t.string  "provider"
     t.text    "raw"
+    t.string  "url"
+    t.string  "image"
   end
 
   add_index "identities", ["uid"], :name => "index_identities_on_uid"

@@ -4,14 +4,10 @@
 </p>
 <ul>
 <% @user.identities.each do |identity| %>
-  <%
-    url = identity.raw['info']['urls'].try(:first).try(:last)
-    image = identity.raw['info']['image']
-  %>
   <li>
     <span class="label"><%= identity.provider.capitalize %></span>
-    <%= link_to('頁面連結', url) if url %>
-    <%= image_tag image if image %>
+    <%= link_to('頁面連結', identity.url) if identity.url %>
+    <%= image_tag identity.image if identity.image %>
   </li>
 <% end %>
 </ul>
