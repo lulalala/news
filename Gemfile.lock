@@ -16,7 +16,7 @@ GIT
 
 GIT
   remote: git://github.com/lulalala/taiwanese_news_parser.git
-  revision: b1746856d3df085657c5f6ec1830bbe76de70f89
+  revision: b689ef4a81157faef0c398a0ce6d5e37efa80402
   specs:
     taiwanese_news_parser (0.0.1)
       addressable (~> 2.0)
