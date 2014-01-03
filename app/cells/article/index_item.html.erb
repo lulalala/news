@@ -8,7 +8,7 @@
       <% lr.tags.each do |tag| %>
         <span class="label label-warning"><%= tag %></span>
       <% end %>
-      <%= truncate(lr.text, length:30) %>
+      <%= truncate(lr.text, length:80) %>
       <% if lr.involved_personally? %>
         <span>我是當事人</span>
       <% end %>
