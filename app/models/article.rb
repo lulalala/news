@@ -18,7 +18,11 @@ class Article < ActiveRecord::Base
   end
 
   def content_lines
-    @content_lines ||= SentenceSplitter.split(content)
+    if ! @content_lines
+      @content_lines = [title]
+      @content_lines.concat SentenceSplitter.split(content)
+    end
+    @content_lines
   end
 
   before_create :build_lines
