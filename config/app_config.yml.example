@@ -1,0 +1,5 @@
+rails:
+  secret_token: ''
+facebook:
+  app_id: ''
+  app_secret: ''
