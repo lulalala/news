@@ -16,7 +16,7 @@ GIT
 
 GIT
   remote: git://github.com/lulalala/taiwanese_news_parser.git
-  revision: b689ef4a81157faef0c398a0ce6d5e37efa80402
+  revision: c7a53fe94c9bc5532339629ba26a1170941af0a0
   specs:
     taiwanese_news_parser (0.0.1)
       addressable (~> 2.0)
@@ -239,7 +239,7 @@ GEM
       net-ssh (>= 2.6.5)
     newrelic_rpm (3.6.9.171)
     nifty-generators (0.4.6)
-    nokogiri (1.6.0)
+    nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     oauth2 (0.8.1)
       faraday (~> 0.8)
