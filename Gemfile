@@ -73,7 +73,7 @@ gem "high_voltage"
 gem 'auto_html', '~> 1.6.0'
 
 # Fetch
-gem 'nokogiri'
+gem 'nokogiri', '~> 1.6.0'
 gem "addressable", "~> 2.3.4"
 gem 'taiwanese_news_parser', github:'lulalala/taiwanese_news_parser'
 
