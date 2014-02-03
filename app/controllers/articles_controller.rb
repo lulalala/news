@@ -34,8 +34,9 @@ class ArticlesController < ApplicationController
       end
       redirect_to @article
     end
-  rescue
+  rescue Exception => e
     logger.parser.error(params[:url])
+    logger.parser.error(e.inspect)
     if Rails.env.development?
       raise
     else
