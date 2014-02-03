@@ -7,6 +7,10 @@ class ArticlesController < ApplicationController
 
   def create
     url = params[:url]
+    if !url.ascii_only?
+      url = URI.encode(url)
+    end
+
     parser = TaiwaneseNewsParser.new(url)
 
     if parser.nil? || ( parser.article[:web_domain].blank? ||  parser.article[:url_id].blank? )
