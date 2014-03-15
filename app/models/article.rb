@@ -5,6 +5,7 @@ class Article < ActiveRecord::Base
   has_many :'lines', class_name:'Article::Line'
   has_many :line_reviews, :through => :lines, :source => :reviews
   has_many :reviews, class_name:'Article::Review', :as => :reviewable
+  has_many :links
 
   validate :reproduced?
   def reproduced?
