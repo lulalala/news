@@ -1,0 +1,11 @@
+<%= form_for [@article, @link] do |f| %>
+  <div>
+    <%= f.label :url %>
+    <%= f.text_field :url, class:'span6' %>
+  </div>
+  <div>
+    <%= f.label :description, '描述' %>
+    <%= f.text_field :description, class:'span6' %>
+  </div>
+  <%= f.submit nil, class:'btn btn-large' %>
+<% end %>

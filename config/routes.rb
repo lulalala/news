@@ -12,6 +12,7 @@ NewsSucks::Application.routes.draw do
     scope module: 'article' do
       resources :lines
     end
+    resources :links
   end
   scope module: 'article' do
     resources :reviews

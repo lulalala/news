@@ -24,3 +24,15 @@
 <% end %>
 </tbody>
 </table>
+
+<h3>相關網頁</h3>
+<p>與報導有相關但是非關事實對錯的連結，如反方報導或是深入閱讀等</p>
+<table class='table'>
+<% @article.links.each do |article| %>
+  <tr>
+    <td><%= article.url %></td>
+    <td><%= article.description %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to '新增', new_article_link_path(@article), :data => { :colorbox => true }, class:'btn' %>
