@@ -16,7 +16,7 @@ GIT
 
 GIT
   remote: git://github.com/lulalala/taiwanese_news_parser.git
-  revision: 61fdd17ef80f95c1356af9e5a66e3dbc83cfdcd8
+  revision: 442bcf25d1ac73ff921d5c22deff85f39d16b755
   specs:
     taiwanese_news_parser (0.0.1)
       addressable (~> 2.0)
@@ -61,7 +61,7 @@ GEM
       multi_json (~> 1.0)
     acts-as-taggable-on (2.4.0)
       rails (~> 3.0)
-    addressable (2.3.5)
+    addressable (2.3.6)
     after_commit_action (0.1.3)
       activerecord (>= 3.0.0)
     anjlab-bootstrap-rails (2.3.1.1)
@@ -221,7 +221,7 @@ GEM
     metaclass (0.0.1)
     method_source (0.8.1)
     mime-types (1.25.1)
-    mini_portile (0.5.2)
+    mini_portile (0.5.3)
     mocha (0.13.3)
       metaclass (~> 0.0.1)
     multi_json (1.7.9)
