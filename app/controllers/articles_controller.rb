@@ -13,7 +13,9 @@ class ArticlesController < ApplicationController
 
     parser = TaiwaneseNewsParser.new(url)
 
-    if parser.nil? || ( parser.article[:web_domain].blank? ||  parser.article[:url_id].blank? )
+    if parser.nil?
+      raise NewsSucks::ParserNotExistError
+    elsif ( parser.article[:web_domain].blank? ||  parser.article[:url_id].blank? )
       raise # debugging
     end
 
@@ -43,6 +45,9 @@ class ArticlesController < ApplicationController
     logger.parser.error(e.inspect)
     if Rails.env.development?
       raise
+    elsif e.is_a? NewsSucks::ParserNotExistError
+      flash[:error] = '抱歉，目前還沒辦法抓取這個網站的內容。中國時報只能抓新版網站，東森新聞只能抓 Ettoday。'
+      redirect_to action: :index
     else
       flash[:error] = '抱歉，這篇新聞抓取時發生問題，已經通知站長，預計一週內會修復。'
       redirect_to action: :index
