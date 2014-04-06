@@ -5,6 +5,7 @@ class IdentitiesController < ApplicationController
   skip_before_filter :verify_authenticity_token, only: :create
 
   def index
+    @identities = current_user.identities #TODO Cancan default produced 1=1 queries ??
   end
 
   # Must be signed in
