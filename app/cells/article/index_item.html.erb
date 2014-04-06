@@ -1,6 +1,7 @@
 <div class="article-row">
   <h2><%= @article.title %></h2>
-  <%= @article.company_name %>/<%= @article.reporter_name %>
+  <%= @article.company_name %>
+  <% if @article.reporter_name %>/ <%= @article.reporter_name %><% end %>
   <%= link_to '詳細', article_path(@article), class:'btn btn-large' %>
   <div>
   <% @article.line_reviews.limit(3).each do |lr| %>
