@@ -19,3 +19,5 @@ set_meta_tags(
 <% @articles.each do |article| %>
   <%= render_cell :article, :index_item, article %>
 <% end %>
+
+<%= paginate @articles %>
