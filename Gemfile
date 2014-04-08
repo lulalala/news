@@ -79,6 +79,7 @@ gem 'taiwanese_news_parser', github:'lulalala/taiwanese_news_parser'
 
 # Pagination
 gem 'kaminari'
+gem 'kaminari-bootstrap', '~> 0.1.3'
 
 # Authentication
 gem 'devise', '~> 3.1.0'
