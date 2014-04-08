@@ -29,6 +29,18 @@
 
 <%= yield %>
 
+<hr />
+<footer class="footer">
+  <ul class="inline">
+    <li>
+      <%= link_to '關於本站以及誠徵工作人員', page_path('about') %>
+    </li>
+    <li>
+      <%= link_to '聯絡我們 / 給我們意見 / 回報問題', new_suggestion_path %>
+    </li>
+  </ul>
+</footer>
+
   <%= browserid_js_tag %>
   <%= javascript_include_tag "application" %>
 </body>
