@@ -16,8 +16,15 @@ set_meta_tags(
 
 <p class="alert">如為當事人想要糾正，請先登入後，用右上方的Facebook認證，就可以開啟當事人認證功能</p>
 
-<% @articles.each do |article| %>
-  <%= render_cell :article, :index_item, article %>
-<% end %>
+<div class="row-fluid">
+  <div class="span10">
+    <% @articles.each do |article| %>
+      <%= render_cell :article, :index_item, article %>
+    <% end %>
+  </div>
+  <div class="span2">
+    <%= render_cell :article, :company_list %>
+  </div>
+</div>
 
 <%= paginate @articles %>

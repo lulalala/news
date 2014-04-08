@@ -1,0 +1,8 @@
+<div class="review">
+目前糾正列表：
+<% @counts.each do |company_name, count| %>
+  <ul>
+    <li><%= company_name %>：<%= count %>份</li>
+  </ul>
+<% end %>
+</div>
