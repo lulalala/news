@@ -60,6 +60,15 @@ set_meta_tags(
       <% end %>
     </div>
   <% end %>
+
+  <% if @article.links.present? %>
+    <h3>相關連結</h3>
+    <ul>
+      <% @article.links.each do |link| %>
+        <li><%= link_to link.description, link.url %></li>
+      <% end %>
+    </ul>
+  <% end %>
 <!--
   <p>
     <strong>Title:</strong>
