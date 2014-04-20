@@ -1,7 +1,7 @@
 class Article::Review < ActiveRecord::Base
   belongs_to :reviewable, polymorphic:true, counter_cache: true
   belongs_to :user
-  attr_accessible :reviewable_type, :reviewable_id, :text, :tag_list, :involved_personally
+  attr_accessible :reviewable_type, :reviewable_id, :text, :tag_list, :involved_personally, :user_id
 
   after_commit :update_article_counter
 

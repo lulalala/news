@@ -156,14 +156,14 @@ RailsAdmin.config do |config|
 
   ###  Article::Review  ###
 
-  # config.model 'Article::Review' do
+  config.model 'Article::Review' do
 
   #   # You can copy this to a 'rails_admin do ... end' block inside your article/review.rb model definition
 
   #   # Found associations:
 
   #     configure :reviewable, :polymorphic_association 
-  #     configure :user, :belongs_to_association 
+      configure :user, :belongs_to_association 
   #     configure :taggings, :has_many_association         # Hidden 
   #     configure :base_tags, :has_many_association         # Hidden 
   #     configure :tag_taggings, :has_many_association         # Hidden 
@@ -202,7 +202,7 @@ RailsAdmin.config do |config|
   #     # also see the create, update, modal and nested sections, which override edit in specific cases (resp. when creating, updating, modifying from another model in a popup modal or modifying from another model nested form)
   #     # you can override a cross-section field configuration in any section with the same syntax `configure :field_name do ... end`
   #     # using `field` instead of `configure` will exclude all other fields and force the ordering
-  # end
+  end
 
 
   ###  User  ###
