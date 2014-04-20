@@ -54,7 +54,7 @@ set_meta_tags(
         <br />
         <% if can?(:destroy, r) %>
           <div class='control'>
-            <%= link_to '刪除', review_path(r), method:'delete', class:'btn btn-danger' %>
+            <%= link_to '刪除', review_path(r), method:'delete', class:'delete', confirm:'確定要刪除嗎？' %>
           </div>
         <% end %>
       <% end %>
