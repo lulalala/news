@@ -43,6 +43,8 @@ class ArticlesController < ApplicationController
   rescue Exception => e
     logger.parser.error(params[:url])
     logger.parser.error(e.inspect)
+    Suggestion.create(content:"解析器問題：#{params[:url]}。#{e.inspect}")
+
     if Rails.env.development?
       raise
     elsif e.is_a? NewsSucks::ParserNotExistError
