@@ -7,7 +7,6 @@ class Article < ActiveRecord::Base
   has_many :reviews, class_name:'Article::Review', :as => :reviewable
   has_many :links
 
-  validate :reproduced?
   def reproduced?
     if reproduced
       errors.add(:base, "新聞轉載")
