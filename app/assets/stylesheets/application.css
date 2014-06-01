@@ -9,8 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require base
  *= require common
+ *= require articles
+ *= require suggestions
  *= require persona-buttons
  *= require unobtrusive_flash
  *= require colorbox-rails
