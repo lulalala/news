@@ -44,14 +44,15 @@ set_meta_tags(
     <div class="well">
       <blockquote><%= l.text %></blockquote>
       <% l.reviews.each do |r| %>
-        <span class="label"><%= r.tags.first.try(:name) %></span>
-        <% if r.involved_personally? %>
-          <%= link_to r.user, :data => { :colorbox => true } do %>
-            <span class='label label-warning' style='text-decoration:underline'>我是當事人</span>
+        <p>
+          <span class="label"><%= r.tags.first.try(:name) %></span>
+          <% if r.involved_personally? %>
+            <%= link_to r.user, :data => { :colorbox => true } do %>
+              <span class='label label-warning' style='text-decoration:underline'>我是當事人</span>
+            <% end %>
           <% end %>
-        <% end %>
-        <%= r.text_html %>
-        <br />
+          <%= r.text_html %>
+        </p>
         <% if can?(:destroy, r) %>
           <div class='control'>
             <%= link_to '刪除', review_path(r), method:'delete', class:'delete', confirm:'確定要刪除嗎？' %>
