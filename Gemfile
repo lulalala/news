@@ -13,7 +13,8 @@ group :assets do
   gem 'sass-rails', '~> 3.2.6'
   gem 'coffee-rails', '~> 3.2.2'
   gem 'uglifier', '~> 1.3.0'
-  gem "compass-rails"
+  gem "compass-rails", '~> 2.0.4'
+  gem "compass", '~> 1.0.3'
   gem 'gistyle'
 end
 
