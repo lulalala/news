@@ -89,7 +89,7 @@ gem 'omniauth-facebook'
 
 gem "settingslogic", "~> 2.0.9"
 
-gem "rails_admin"
+#gem "rails_admin"
 
 group :development do
   gem "nifty-generators", "~> 0.4.6"

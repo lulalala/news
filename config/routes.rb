@@ -3,7 +3,7 @@ NewsSucks::Application.routes.draw do
 
   root :to => "articles#index"
 
-  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+  #mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   resources :articles, only:[:index, :show, :create, :update] do
     member do
