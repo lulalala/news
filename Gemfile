@@ -2,8 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.16'
 
-gem 'mysql2'
-gem 'pg'
+gem 'sqlite3', '~> 1.3.10'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -33,12 +32,6 @@ gem 'jquery-rails', '~> 3.0.4'
 gem 'puma'
 
 # Deploy
-gem 'capistrano', '~> 3.3'
-gem 'capistrano-rbenv', '~> 2.0'
-gem 'capistrano-rails', '~> 1.1'
-gem 'capistrano-bundler', '~> 1.1'
-gem 'capistrano3-puma', github: "seuros/capistrano-puma"
-#gem "capistrano3-nginx", "~> 2.0"
 gem "turbo-sprockets-rails3"
 
 # Caching
@@ -127,7 +120,7 @@ group :test do
 end
 
 group :development, :test do
-  gem 'sqlite3'
+  #gem 'sqlite3'
   gem "rspec-rails", "~> 2.13.2"
 end
 
